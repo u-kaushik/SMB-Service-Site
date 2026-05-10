@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="bg-brand-blue text-white w-9 h-9 rounded-xl flex items-center justify-center shadow-lg shadow-brand-blue/20">
-              <span className="font-black text-xl tracking-tighter italic">M</span>
+              <span className="font-black text-sm tracking-tighter italic">SM</span>
             </div>
             <span className="font-bold text-xl tracking-tight hidden sm:block whitespace-nowrap">S Moat <span className="font-light opacity-60 text-sm uppercase tracking-widest ml-1">Fabrications</span></span>
           </div>
@@ -877,7 +877,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-8 text-brand-dark">
               <div className="bg-brand-blue text-white w-9 h-9 rounded-xl flex items-center justify-center shadow-lg shadow-brand-blue/20">
-                <span className="font-black text-xl tracking-tighter italic">M</span>
+                <span className="font-black text-sm tracking-tighter italic">SM</span>
               </div>
               <span className="font-bold text-xl tracking-tight whitespace-nowrap">S Moat <span className="font-light opacity-60 text-sm uppercase tracking-widest ml-1">Fabrications</span></span>
             </div>
@@ -1053,7 +1053,7 @@ const ChatWidget = () => {
             <div className="bg-brand-dark p-6 text-white shrink-0">
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-brand-blue flex items-center justify-center text-xs font-bold italic">M</div>
+                  <div className="w-8 h-8 rounded-full bg-brand-blue flex items-center justify-center text-[10px] font-bold italic tracking-tighter">SM</div>
                   <div>
                     <h4 className="font-bold text-sm">Shane @ S Moat</h4>
                     <p className="text-[10px] opacity-60">Expert Fabricator</p>
