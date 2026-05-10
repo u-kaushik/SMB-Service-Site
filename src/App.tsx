@@ -303,24 +303,6 @@ const AboutSection = () => {
                 <span className="text-xs font-bold text-slate-800">Bespoke Fit</span>
               </div>
             </div>
-            
-            <motion.div 
-              whileHover={{ y: -5 }}
-              className="absolute top-12 left-6 md:left-[-1.5rem] lg:left-[-3rem] z-20 bg-white p-6 rounded-3xl shadow-2xl max-w-[280px] md:max-w-xs border-l-4 border-brand-blue"
-            >
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
-                  <Heart size={24} fill="currentColor" className="opacity-20" />
-                </div>
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-brand-blue">Founded Locally</p>
-                  <p className="text-sm font-bold text-slate-900">Established Since 2012</p>
-                </div>
-              </div>
-              <p className="text-xs text-slate-500 leading-relaxed italic">
-                "Built on two generations of pride. We started in Murrow with a vision to provide the Wisbech area with steel that stands the test of time."
-              </p>
-            </motion.div>
           </div>
 
           <div>
@@ -334,7 +316,7 @@ const AboutSection = () => {
               S Moat Fabrications isn't a massive corporation. We're a family-run business based in Murrow, Wisbech. Our work is forged in the heart of Fenland, serving local farmers, businesses, and homeowners with custom steelwork that's built for purpose.
             </p>
             <p className="text-slate-500 mb-8 leading-relaxed font-medium">
-              We take pride in our direct, no-nonsense approach. When you call us, you're talking directly to the people who will be measuring, building, and fitting your project. Our roots in the agricultural community mean we build things to last.
+              Built on two generations of local pride, we keep things direct and no-nonsense: when you call us, you're talking to the people who will be measuring, building, and fitting your project.
             </p>
           </div>
         </div>
