@@ -673,15 +673,6 @@ const TestimonialsSection = () => {
                 key={idx}
                 className="flex-shrink-0 w-[calc(100vw-32px)] md:w-[400px] bg-white rounded-[40px] p-8 md:p-10 shadow-2xl shadow-slate-200 border-t-8 border-brand-blue relative"
               >
-                <div className="absolute top-4 right-6 opacity-30">
-                  {test.source === "facebook" ? (
-                    <Facebook className="text-[#1877F2]" size={20} />
-                  ) : (
-                    <div className="flex items-center gap-1 font-black text-yellow-500 text-[10px] italic">
-                      <Star size={12} fill="currentColor" /> Yell
-                    </div>
-                  )}
-                </div>
                 <div className="flex gap-1 text-yellow-400 mb-6">
                   {[...Array(test.rating)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                 </div>
@@ -702,6 +693,9 @@ const TestimonialsSection = () => {
                     <h5 className="font-bold text-slate-900 text-lg">{test.name}</h5>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 flex items-center gap-1">
                       <CheckCircle2 size={12} className="text-brand-blue" /> Verified Review
+                    </p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">
+                      Via {test.source === "facebook" ? "Facebook" : "Yell.co.uk"}
                     </p>
                   </div>
                 </div>
