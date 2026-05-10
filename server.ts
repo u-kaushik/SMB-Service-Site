@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT || 3000);
 
   // Serve input_file_X.png images from the container root or current directory
   app.get("/input_file_:id.png", (req, res) => {

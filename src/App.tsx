@@ -152,11 +152,9 @@ const Hero = () => {
       {/* Background Simulation Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?q=80&w=2070&auto=format&fit=crop" 
-          alt="Metal Fabrication Background" 
+          src="/images/gate-black-arch.png" 
+          alt="Black arched driveway gates fabricated by S Moat Fabrications" 
           className="w-full h-full object-cover opacity-40"
-          referrerPolicy="no-referrer"
-          loading="lazy"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-700/40 via-brand-dark to-black opacity-60"></div>
         <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #ffffff05 0px, #ffffff05 1px, transparent 1px, transparent 10px)' }}></div>
@@ -180,9 +178,9 @@ const Hero = () => {
 
             <div className="flex items-center gap-6">
               <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full border-2 border-brand-dark bg-brand-blue text-white flex items-center justify-center text-[10px] font-bold">AJ</div>
-                <div className="w-10 h-10 rounded-full border-2 border-brand-dark bg-slate-600 text-white flex items-center justify-center text-[10px] font-bold">BS</div>
-                <div className="w-10 h-10 rounded-full border-2 border-brand-dark bg-navy-800 text-white flex items-center justify-center text-[10px] font-bold">MK</div>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=120&auto=format&fit=crop" alt="Verified S Moat customer" className="w-10 h-10 rounded-full border-2 border-brand-dark object-cover" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=120&auto=format&fit=crop" alt="Verified S Moat customer" className="w-10 h-10 rounded-full border-2 border-brand-dark object-cover" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=120&auto=format&fit=crop" alt="Verified S Moat customer" className="w-10 h-10 rounded-full border-2 border-brand-dark object-cover" referrerPolicy="no-referrer" />
               </div>
               <div>
                 <div className="flex text-yellow-400 mb-0.5">
@@ -272,10 +270,9 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10 bg-slate-100">
               <img 
-                src="https://images.unsplash.com/photo-1527847263472-aa5338d178b8?q=80&w=1200&auto=format&fit=crop" 
+                src="/images/tractor.png" 
                 alt="S Moat Fabrication Vintage Ferguson Tractor" 
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
                 loading="lazy"
               />
             </div>
@@ -352,22 +349,22 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Gates & Access",
-      image: "https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?q=80&w=800&auto=format&fit=crop",
+      image: "/images/gate-ornate.png",
       description: "Custom driveway and garden gates built to your exact widths and style preferences."
     },
     {
       title: "Railings & Balustrades",
-      image: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800&auto=format&fit=crop",
+      image: "/images/stairs-railings.png",
       description: "Decorative and security railings for homes, commercial properties and public spaces."
     },
     {
       title: "Welding & Repairs",
-      image: "https://images.unsplash.com/photo-1535231023245-c558aa5da372?q=80&w=800&auto=format&fit=crop",
+      image: "/images/gate-frame.png",
       description: "On-site and workshop-based welding for agricultural machinery, vehicle chassis and structural steel."
     },
     {
       title: "Commercial Fabrication",
-      image: "https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=800&auto=format&fit=crop",
+      image: "/images/gate-composite-drive.png",
       description: "Batch fabrication for local contractors, industrial frame work and retail display steel."
     }
   ];
@@ -414,10 +411,9 @@ const VideoPreview = () => {
       <div className="max-w-7xl mx-auto">
         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[500px]">
           <img 
-            src="https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=1200&auto=format&fit=crop" 
-            alt="Process Video Thumbnail" 
+            src="/images/gate-frame.png" 
+            alt="S Moat Fabrications steel frame installation" 
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-brand-dark/40 flex items-center justify-center">
@@ -437,7 +433,7 @@ const VideoPreview = () => {
               </p>
             </div>
             <div className="hidden md:flex items-center gap-4 text-white text-[10px] font-bold uppercase tracking-widest bg-brand-dark/50 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-              Watch Workshop Tour
+              Coming Soon
             </div>
           </div>
         </div>
@@ -509,12 +505,12 @@ const FAQSection = () => {
 
 const GallerySection = () => {
   const images = [
-    { src: "https://images.unsplash.com/photo-1505322101000-19457cff32ba?q=80&w=800&auto=format&fit=crop", height: "h-[300px]", alt: "Finished Metal Gate Fabrication" },
-    { src: "https://images.unsplash.com/photo-1581092160562-40aa084788c0?q=80&w=800&auto=format&fit=crop", height: "h-[450px]", alt: "Professional Metalworking Pliers and Tools" },
-    { src: "https://images.unsplash.com/photo-1516937618919-df42ef2be3bb?q=80&w=800&auto=format&fit=crop", height: "h-[350px]", alt: "Industrial Steel Framework" },
-    { src: "https://images.unsplash.com/photo-1614705590304-41d3408805f3?q=80&w=800&auto=format&fit=crop", height: "h-[400px]", alt: "Bespoke Driveway Gates" },
-    { src: "https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=800&auto=format&fit=crop", height: "h-[350px]", alt: "Workshop Fabrication Process" },
-    { src: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800&auto=format&fit=crop", height: "h-[450px]", alt: "Decorative Railings Installation" },
+    { src: "/images/gate-ornate.png", height: "h-[300px]", alt: "Ornate black driveway gates with decorative scrollwork" },
+    { src: "/images/gate-composite-close.png", height: "h-[450px]", alt: "Composite infill side gates fitted between brickwork and fencing" },
+    { src: "/images/gate-composite-drive.png", height: "h-[350px]", alt: "Wide black composite driveway gates between brick pillars" },
+    { src: "/images/stairs-railings.png", height: "h-[400px]", alt: "Bespoke black steel staircase and railings" },
+    { src: "/images/gate-frame.png", height: "h-[350px]", alt: "Steel overhead frame fabrication above a driveway" },
+    { src: "/images/gate-black-arch.png", height: "h-[450px]", alt: "Black arched electric driveway gates installed between brick walls" },
   ];
 
   return (
@@ -534,7 +530,7 @@ const GallerySection = () => {
               whileHover={{ scale: 1.02 }}
               className={`${img.height} rounded-3xl overflow-hidden shadow-lg shadow-slate-200 hover:shadow-2xl transition-all duration-500`}
             >
-              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
+              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
             </motion.div>
           ))}
         </div>
@@ -723,19 +719,19 @@ const BlogSection = () => {
     {
       title: "How to prepare for a gate quote",
       category: "Guides",
-      image: "https://images.unsplash.com/photo-1533038590840-1cde6b66b721?q=80&w=800&auto=format&fit=crop",
+      image: "/images/gate-composite-drive.png",
       date: "May 2026"
     },
     {
       description: "What to include when requesting welding repairs",
       category: "Tips",
-      image: "https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=800&auto=format&fit=crop",
+      image: "/images/gate-frame.png",
       date: "April 2026"
     },
     {
       title: "Why photos and measurements speed up quotes",
       category: "Efficiency",
-      image: "https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?q=80&w=800&auto=format&fit=crop",
+      image: "/images/gate-ornate.png",
       date: "March 2026"
     }
   ];
