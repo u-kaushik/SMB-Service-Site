@@ -17,7 +17,9 @@ import {
   Facebook, 
   Play,
   Quote,
-  MessageCircle
+  MessageCircle,
+  Heart,
+  ShieldCheck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -83,36 +85,63 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-4 right-4 mt-2 bg-white rounded-3xl shadow-2xl p-6 border border-slate-100"
-          >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  className="text-lg font-semibold text-slate-800"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <a 
-                href="#contact" 
-                className="w-full bg-navy-900 text-white py-4 rounded-xl text-center font-bold"
-                onClick={() => setMobileMenuOpen(false)}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="md:hidden absolute top-full left-4 right-4 mt-2 bg-white rounded-3xl shadow-2xl p-6 border border-slate-100 overflow-hidden"
               >
-                Request Quote
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <div className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                    <a 
+                      key={link.name} 
+                      href={link.href} 
+                      className="text-lg font-semibold text-slate-800"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                  
+                  <div className="pt-4 mt-2 border-t border-slate-100 px-1">
+                    <p className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 mb-3 ml-1">Quick Contact</p>
+                    <div className="flex flex-row items-center justify-between gap-1 py-2 px-1 bg-slate-50 rounded-2xl">
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <div className="p-1.5 bg-white rounded-lg shadow-sm">
+                          <Phone size={12} className="text-brand-blue" />
+                        </div>
+                        <span className="text-[9px] font-black text-slate-700 whitespace-nowrap">01945 700061</span>
+                      </div>
+                      <div className="w-[1px] h-4 bg-slate-200" />
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <div className="p-1.5 bg-white rounded-lg shadow-sm">
+                          <Mail size={12} className="text-brand-blue" />
+                        </div>
+                        <span className="text-[9px] font-black text-slate-700 truncate">smoatfab...</span>
+                      </div>
+                      <div className="w-[1px] h-4 bg-slate-200" />
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <div className="p-1.5 bg-white rounded-lg shadow-sm">
+                          <Star size={12} className="text-brand-blue" />
+                        </div>
+                        <span className="text-[9px] font-black text-slate-700 whitespace-nowrap">08-17</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a 
+                    href="#contact" 
+                    className="w-full bg-brand-dark text-white py-4 rounded-xl text-center font-bold mt-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Request Quote
+                  </a>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
     </nav>
   );
 };
@@ -126,6 +155,7 @@ const Hero = () => {
           src="https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?q=80&w=2070&auto=format&fit=crop" 
           alt="Metal Fabrication Background" 
           className="w-full h-full object-cover opacity-40"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-700/40 via-brand-dark to-black opacity-60"></div>
         <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #ffffff05 0px, #ffffff05 1px, transparent 1px, transparent 10px)' }}></div>
@@ -239,19 +269,49 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1614705590304-41d3408805f3?q=80&w=1000&auto=format&fit=crop" 
-                alt="Bespoke Metal Gate" 
+                src="/input_file_0.png" 
+                alt="S Moat Fabrication Family History" 
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "https://images.unsplash.com/photo-1527847263472-aa5338d178b8?q=80&w=1200&auto=format&fit=crop";
+                }}
               />
             </div>
+            
+            {/* Quick Benefits Icons Under Photo */}
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                <div className="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-2">
+                  <Heart size={20} />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 leading-tight">Family Run</span>
+                <span className="text-[8px] font-bold text-slate-500 mt-1">2nd Generation Pride</span>
+              </div>
+              <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                <div className="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-2">
+                  <MapPin size={20} />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 leading-tight">Wisbech Local</span>
+                <span className="text-[8px] font-bold text-slate-500 mt-1">Based in Murrow</span>
+              </div>
+              <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
+                <div className="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-2">
+                  <ShieldCheck size={20} />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 leading-tight">Direct Trust</span>
+                <span className="text-[8px] font-bold text-slate-500 mt-1">No Middlemen</span>
+              </div>
+            </div>
+
             {/* Decoration */}
             <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-brand-blue/5 rounded-3xl -z-0" />
             
             <motion.div 
               whileHover={{ y: -5 }}
-              className="absolute bottom-12 left-6 md:left-[-1.5rem] lg:left-[-3rem] z-20 bg-white p-6 rounded-3xl shadow-2xl max-w-[280px] md:max-w-xs border-l-4 border-brand-blue"
+              className="absolute top-12 left-6 md:left-[-1.5rem] lg:left-[-3rem] z-20 bg-white p-6 rounded-3xl shadow-2xl max-w-[280px] md:max-w-xs border-l-4 border-brand-blue"
             >
               <Quote className="text-navy-900 mb-3 opacity-20" size={32} />
               <p className="text-sm font-medium text-slate-700 italic leading-relaxed">
@@ -268,14 +328,16 @@ const AboutSection = () => {
 
           <div>
             <div className="inline-block px-4 py-1 rounded-full bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-widest mb-6">
-              The S Moat Approach
+              Establish Since 2012
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]">
-              Fabrication That <br />
-              <span className="text-brand-blue">Fits the Job</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1]">
+              About <span className="text-brand-blue">Us</span>
             </h2>
-            <p className="text-lg text-slate-500 mb-8 leading-relaxed font-medium">
-              From driveway gates to repairs and commercial fabrication, S Moat Fabrications helps customers get practical, well-built metalwork without unnecessary back-and-forth.
+            <p className="text-lg text-slate-500 mb-8 leading-relaxed font-bold">
+              S Moat Fabrications is a family-run business based in Murrow, providing high-quality, local fabrication services across Wisbech and the surrounding areas.
+            </p>
+            <p className="text-slate-500 mb-8 leading-relaxed font-medium">
+              We take pride in our direct, no-nonsense approach. When you call us, you're talking directly to the people who will be measuring, building, and fitting your project. Our roots in the agricultural and local community mean we build things to last.
             </p>
 
             <div className="space-y-6">
@@ -284,8 +346,8 @@ const AboutSection = () => {
                   <CheckCircle2 size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 text-lg">Family-run local service</h4>
-                  <p className="text-slate-500 mt-1 text-sm">Direct communication with the people doing the work.</p>
+                  <h4 className="font-bold text-slate-900 text-lg">Direct Family Service</h4>
+                  <p className="text-slate-500 mt-1 text-sm">Personal attention from start to finish on every project.</p>
                 </div>
               </div>
               <div className="flex gap-4 p-4 rounded-2xl hover:bg-slate-100/50 transition-colors border border-transparent hover:border-slate-200">
@@ -293,21 +355,9 @@ const AboutSection = () => {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 text-lg">Built around real measurements</h4>
-                  <p className="text-slate-500 mt-1 text-sm">We visit the site to ensure every fabrication piece fits perfectly.</p>
+                  <h4 className="font-bold text-slate-900 text-lg">Murrow Based Workshop</h4>
+                  <p className="text-slate-500 mt-1 text-sm">Supporting Wisbech, Cambridgeshire and beyond.</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-10 pt-10 border-t border-slate-100 flex items-center gap-6">
-              <div>
-                <p className="text-3xl font-black text-brand-dark">100%</p>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Recommend Rate</p>
-              </div>
-              <div className="h-10 w-[1px] bg-slate-200" />
-              <div>
-                <p className="text-3xl font-black text-brand-dark">Mon-Sat</p>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Availability</p>
               </div>
             </div>
           </div>
@@ -362,7 +412,7 @@ const ServicesSection = () => {
               whileHover={{ y: -10 }}
               className="group relative h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-xl shadow-slate-200"
             >
-              <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h4 className="text-2xl font-bold text-white mb-2">{service.title}</h4>
@@ -390,6 +440,7 @@ const VideoPreview = () => {
             src="https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=1200&auto=format&fit=crop" 
             alt="Process Video Thumbnail" 
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-brand-dark/40 flex items-center justify-center">
             <motion.button 
@@ -505,7 +556,7 @@ const GallerySection = () => {
               whileHover={{ scale: 1.02 }}
               className={`${img.height} rounded-3xl overflow-hidden shadow-lg shadow-slate-200 hover:shadow-2xl transition-all duration-500`}
             >
-              <img src={img.src} alt={`Project ${idx}`} className="w-full h-full object-cover" />
+              <img src={img.src} alt={`Project ${idx}`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </motion.div>
           ))}
         </div>
@@ -707,7 +758,7 @@ const BlogSection = () => {
               className="group cursor-pointer"
             >
               <div className="aspect-[16/10] rounded-3xl overflow-hidden mb-6 shadow-xl shadow-slate-100 transition-all duration-500 group-hover:shadow-2xl">
-                <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
               </div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-brand-blue/5 text-brand-blue px-3 py-1 rounded-full">
@@ -754,6 +805,76 @@ const CTASection = () => {
             Request Quotation 
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
           </motion.a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ContactSection = () => {
+  return (
+    <section id="contact" className="py-24 bg-white px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 mb-6">Talk to the Team</h2>
+            <p className="text-lg text-slate-500 mb-8 leading-relaxed font-medium">
+              S Moat Fabrications is a family-run business based in Murrow. We take pride in responding quickly to local fabrication requests.
+            </p>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+                  <Phone size={24} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Direct Call</p>
+                  <p className="text-xl font-bold text-slate-900">01945 700061</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+                  <Mail size={24} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Address</p>
+                  <p className="text-xl font-bold text-slate-900">smoatfab@outlook.com</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Workshop Location</p>
+                  <p className="text-xl font-bold text-slate-900">15 Front Rd, Murrow, Wisbech</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Your Name</label>
+                  <input type="text" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 outline-none focus:border-brand-blue transition-all" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Phone Number</label>
+                  <input type="tel" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 outline-none focus:border-brand-blue transition-all" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Project Description</label>
+                <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 outline-none focus:border-brand-blue transition-all resize-none"></textarea>
+              </div>
+              <button className="w-full bg-brand-blue text-white py-4 rounded-xl font-bold shadow-xl shadow-brand-blue/20 hover:bg-brand-dark transition-all">
+                Send Enquiry
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -884,22 +1005,43 @@ const ChatWidget = () => {
   ];
 
   const handleQuestion = (id: string, question: string, answer: string) => {
-    // If already asked, scroll to it instead of adding again
+    // If already asked, scroll to it
     if (askedQuestions.includes(id)) {
       const element = document.getElementById(`msg-${id}`);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (element && scrollRef.current) {
+        scrollRef.current.scrollTo({
+          top: element.offsetTop - 10,
+          behavior: 'smooth'
+        });
       }
       return;
     }
     
     setAskedQuestions(prev => [...prev, id]);
     
-    // Add messages
-    setMessages(prev => [...prev, 
-      { id: id + '-q', text: question, isBot: false },
-      { id: id, text: answer, isBot: true }
-    ]);
+    // Add user question message first
+    setMessages(prev => [...prev, { id: id + '-q', text: question, isBot: false }]);
+    
+    // Slight delay for "thinking" feel then add bot answer
+    setTimeout(() => {
+      setMessages(prev => [...prev, { id: id, text: answer, isBot: true }]);
+      
+      // After bot message is added and rendered, scroll to it
+      setTimeout(() => {
+        const botMsg = document.getElementById(`msg-${id}`);
+        if (botMsg && scrollRef.current) {
+          scrollRef.current.scrollTo({
+            top: botMsg.offsetTop - 10,
+            behavior: 'smooth'
+          });
+        } else if (scrollRef.current) {
+          scrollRef.current.scrollTo({
+            top: scrollRef.current.scrollHeight,
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
+    }, 400);
   };
 
   return (
@@ -954,15 +1096,15 @@ const ChatWidget = () => {
                   return (
                     <button
                       key={i}
-                      disabled={false} // Allow continual clicking even if asked, but visual feedback changes
                       onClick={() => handleQuestion(item.id, item.q, item.a)}
-                      className={`text-left text-xs p-2.5 rounded-xl border transition-all font-medium ${
+                      className={`text-left text-xs p-2.5 rounded-xl border transition-all font-medium flex items-center justify-between ${
                         isAsked 
-                          ? 'bg-slate-100 border-slate-200 text-slate-400' 
-                          : 'bg-white border-slate-200 hover:border-brand-blue hover:text-brand-blue'
+                          ? 'bg-slate-50 border-slate-100 text-slate-400' 
+                          : 'bg-white border-slate-200 text-slate-700 hover:border-brand-blue hover:text-brand-blue shadow-sm'
                       }`}
                     >
-                      {item.q}
+                      <span>{item.q}</span>
+                      {isAsked && <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />}
                     </button>
                   );
                 })}
@@ -1000,6 +1142,7 @@ export default function App() {
       <TestimonialsSection />
       <BlogSection />
       <CTASection />
+      <ContactSection />
       <Footer />
       <ChatWidget />
     </div>
