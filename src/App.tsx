@@ -937,10 +937,18 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-12 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="pt-12 border-t border-slate-200 grid gap-4 text-center md:grid-cols-3 md:text-left md:items-center">
           <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
             © 2026 S Moat Fabrications Limited
           </p>
+          <a
+            href="https://progrssai.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-slate-300 hover:text-brand-blue transition-colors text-[10px] font-bold uppercase tracking-widest md:text-center"
+          >
+            Website by Progrss AI
+          </a>
           <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-400">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             Family-Owned Since 2012
