@@ -25,6 +25,8 @@ import { motion, AnimatePresence } from 'motion/react';
 
 // --- Components ---
 
+const imagePath = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -152,7 +154,7 @@ const Hero = () => {
       {/* Background Simulation Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/gate-black-arch.png" 
+          src={imagePath("gate-black-arch.png")} 
           alt="Black arched driveway gates fabricated by S Moat Fabrications" 
           className="w-full h-full object-cover opacity-40"
         />
@@ -270,7 +272,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10 bg-slate-100">
               <img 
-                src="/images/tractor.png" 
+                src={imagePath("tractor.png")} 
                 alt="S Moat Fabrication Vintage Ferguson Tractor" 
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -349,22 +351,22 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Gates & Access",
-      image: "/images/gate-ornate.png",
+      image: imagePath("gate-ornate.png"),
       description: "Custom driveway and garden gates built to your exact widths and style preferences."
     },
     {
       title: "Railings & Balustrades",
-      image: "/images/stairs-railings.png",
+      image: imagePath("stairs-railings.png"),
       description: "Decorative and security railings for homes, commercial properties and public spaces."
     },
     {
       title: "Welding & Repairs",
-      image: "/images/gate-frame.png",
+      image: imagePath("gate-frame.png"),
       description: "On-site and workshop-based welding for agricultural machinery, vehicle chassis and structural steel."
     },
     {
       title: "Commercial Fabrication",
-      image: "/images/gate-composite-drive.png",
+      image: imagePath("gate-composite-drive.png"),
       description: "Batch fabrication for local contractors, industrial frame work and retail display steel."
     }
   ];
@@ -411,7 +413,7 @@ const VideoPreview = () => {
       <div className="max-w-7xl mx-auto">
         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[500px]">
           <img 
-            src="/images/gate-frame.png" 
+            src={imagePath("gate-frame.png")} 
             alt="S Moat Fabrications steel frame installation" 
             className="w-full h-full object-cover"
             loading="lazy"
@@ -505,12 +507,12 @@ const FAQSection = () => {
 
 const GallerySection = () => {
   const images = [
-    { src: "/images/gate-ornate.png", height: "h-[300px]", alt: "Ornate black driveway gates with decorative scrollwork" },
-    { src: "/images/gate-composite-close.png", height: "h-[450px]", alt: "Composite infill side gates fitted between brickwork and fencing" },
-    { src: "/images/gate-composite-drive.png", height: "h-[350px]", alt: "Wide black composite driveway gates between brick pillars" },
-    { src: "/images/stairs-railings.png", height: "h-[400px]", alt: "Bespoke black steel staircase and railings" },
-    { src: "/images/gate-frame.png", height: "h-[350px]", alt: "Steel overhead frame fabrication above a driveway" },
-    { src: "/images/gate-black-arch.png", height: "h-[450px]", alt: "Black arched electric driveway gates installed between brick walls" },
+    { src: imagePath("gate-ornate.png"), height: "h-[300px]", alt: "Ornate black driveway gates with decorative scrollwork" },
+    { src: imagePath("gate-composite-close.png"), height: "h-[450px]", alt: "Composite infill side gates fitted between brickwork and fencing" },
+    { src: imagePath("gate-composite-drive.png"), height: "h-[350px]", alt: "Wide black composite driveway gates between brick pillars" },
+    { src: imagePath("stairs-railings.png"), height: "h-[400px]", alt: "Bespoke black steel staircase and railings" },
+    { src: imagePath("gate-frame.png"), height: "h-[350px]", alt: "Steel overhead frame fabrication above a driveway" },
+    { src: imagePath("gate-black-arch.png"), height: "h-[450px]", alt: "Black arched electric driveway gates installed between brick walls" },
   ];
 
   return (
@@ -713,19 +715,19 @@ const BlogSection = () => {
     {
       title: "How to prepare for a gate quote",
       category: "Guides",
-      image: "/images/gate-composite-drive.png",
+      image: imagePath("gate-composite-drive.png"),
       date: "May 2026"
     },
     {
       description: "What to include when requesting welding repairs",
       category: "Tips",
-      image: "/images/gate-frame.png",
+      image: imagePath("gate-frame.png"),
       date: "April 2026"
     },
     {
       title: "Why photos and measurements speed up quotes",
       category: "Efficiency",
-      image: "/images/gate-ornate.png",
+      image: imagePath("gate-ornate.png"),
       date: "March 2026"
     }
   ];
