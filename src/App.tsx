@@ -156,6 +156,7 @@ const Hero = () => {
           alt="Metal Fabrication Background" 
           className="w-full h-full object-cover opacity-40"
           referrerPolicy="no-referrer"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-700/40 via-brand-dark to-black opacity-60"></div>
         <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #ffffff05 0px, #ffffff05 1px, transparent 1px, transparent 10px)' }}></div>
@@ -269,97 +270,73 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10 bg-slate-100">
               <img 
-                src="/input_file_0.png" 
-                alt="S Moat Fabrication Family History" 
+                src="https://images.unsplash.com/photo-1527847263472-aa5338d178b8?q=80&w=1200&auto=format&fit=crop" 
+                alt="S Moat Fabrication Vintage Ferguson Tractor" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "https://images.unsplash.com/photo-1527847263472-aa5338d178b8?q=80&w=1200&auto=format&fit=crop";
-                }}
+                loading="lazy"
               />
             </div>
             
-            {/* Quick Benefits Icons Under Photo */}
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                <div className="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-2">
+            {/* 3 Detail Icons Under Image */}
+            <div className="mt-8 grid grid-cols-3 gap-4">
+              <div className="flex flex-col items-center p-4 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-brand-blue/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-blue mb-3 group-hover:scale-110 transition-transform">
                   <Heart size={20} />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 leading-tight">Family Run</span>
-                <span className="text-[8px] font-bold text-slate-500 mt-1">2nd Generation Pride</span>
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1">Tradition</span>
+                <span className="text-xs font-bold text-slate-800">Family Run</span>
               </div>
-              <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                <div className="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-2">
+              <div className="flex flex-col items-center p-4 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-brand-blue/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-blue mb-3 group-hover:scale-110 transition-transform">
                   <MapPin size={20} />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 leading-tight">Wisbech Local</span>
-                <span className="text-[8px] font-bold text-slate-500 mt-1">Based in Murrow</span>
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1">Community</span>
+                <span className="text-xs font-bold text-slate-800">Strictly Local</span>
               </div>
-              <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                <div className="w-10 h-10 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-2">
+              <div className="flex flex-col items-center p-4 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-brand-blue/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-brand-blue mb-3 group-hover:scale-110 transition-transform">
                   <ShieldCheck size={20} />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 leading-tight">Direct Trust</span>
-                <span className="text-[8px] font-bold text-slate-500 mt-1">No Middlemen</span>
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1">Trust</span>
+                <span className="text-xs font-bold text-slate-800">Bespoke Fit</span>
               </div>
             </div>
-
-            {/* Decoration */}
-            <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-brand-blue/5 rounded-3xl -z-0" />
             
             <motion.div 
               whileHover={{ y: -5 }}
               className="absolute top-12 left-6 md:left-[-1.5rem] lg:left-[-3rem] z-20 bg-white p-6 rounded-3xl shadow-2xl max-w-[280px] md:max-w-xs border-l-4 border-brand-blue"
             >
-              <Quote className="text-navy-900 mb-3 opacity-20" size={32} />
-              <p className="text-sm font-medium text-slate-700 italic leading-relaxed">
-                "Needed custom railings for a steep driveway. S Moat came out, measured, and fitted them perfectly within two weeks."
-              </p>
-              <div className="mt-4 flex items-center justify-between">
-                <span className="text-xs font-bold uppercase text-navy-900 tracking-wider">Local Customer</span>
-                <div className="flex gap-0.5 text-yellow-400">
-                  {[1,2,3,4,5].map(i => <Star key={i} size={10} fill="currentColor" />)}
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                  <Heart size={24} fill="currentColor" className="opacity-20" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-brand-blue">Founded Locally</p>
+                  <p className="text-sm font-bold text-slate-900">Established Since 2012</p>
                 </div>
               </div>
+              <p className="text-xs text-slate-500 leading-relaxed italic">
+                "Built on two generations of pride. We started in Murrow with a vision to provide the Wisbech area with steel that stands the test of time."
+              </p>
             </motion.div>
           </div>
 
           <div>
-            <div className="inline-block px-4 py-1 rounded-full bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-widest mb-6">
-              Establish Since 2012
+            <div className="inline-block px-4 py-1 rounded-full bg-brand-blue/5 text-brand-blue text-xs font-bold uppercase tracking-widest mb-6">
+              Our Story
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1]">
-              About <span className="text-brand-blue">Us</span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 leading-[1.1]">
+              Grit, Pride & <span className="text-brand-blue">Local Heritage.</span>
             </h2>
-            <p className="text-lg text-slate-500 mb-8 leading-relaxed font-bold">
-              S Moat Fabrications is a family-run business based in Murrow, providing high-quality, local fabrication services across Wisbech and the surrounding areas.
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              S Moat Fabrications isn't a massive corporation. We're a family-run business based in Murrow, Wisbech. Our work is forged in the heart of Fenland, serving local farmers, businesses, and homeowners with custom steelwork that's built for purpose.
             </p>
             <p className="text-slate-500 mb-8 leading-relaxed font-medium">
-              We take pride in our direct, no-nonsense approach. When you call us, you're talking directly to the people who will be measuring, building, and fitting your project. Our roots in the agricultural and local community mean we build things to last.
+              We take pride in our direct, no-nonsense approach. When you call us, you're talking directly to the people who will be measuring, building, and fitting your project. Our roots in the agricultural community mean we build things to last.
             </p>
-
-            <div className="space-y-6">
-              <div className="flex gap-4 p-4 rounded-2xl hover:bg-slate-100/50 transition-colors border border-transparent hover:border-slate-200">
-                <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center flex-shrink-0 text-brand-blue">
-                  <CheckCircle2 size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-lg">Direct Family Service</h4>
-                  <p className="text-slate-500 mt-1 text-sm">Personal attention from start to finish on every project.</p>
-                </div>
-              </div>
-              <div className="flex gap-4 p-4 rounded-2xl hover:bg-slate-100/50 transition-colors border border-transparent hover:border-slate-200">
-                <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center flex-shrink-0 text-brand-blue">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-lg">Murrow Based Workshop</h4>
-                  <p className="text-slate-500 mt-1 text-sm">Supporting Wisbech, Cambridgeshire and beyond.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -375,7 +352,7 @@ const ServicesSection = () => {
   const services = [
     {
       title: "Gates & Access",
-      image: "https://images.unsplash.com/photo-1614705590304-41d3408805f3?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?q=80&w=800&auto=format&fit=crop",
       description: "Custom driveway and garden gates built to your exact widths and style preferences."
     },
     {
@@ -385,12 +362,12 @@ const ServicesSection = () => {
     },
     {
       title: "Welding & Repairs",
-      image: "https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1535231023245-c558aa5da372?q=80&w=800&auto=format&fit=crop",
       description: "On-site and workshop-based welding for agricultural machinery, vehicle chassis and structural steel."
     },
     {
       title: "Commercial Fabrication",
-      image: "https://images.unsplash.com/photo-1516937618919-df42ef2be3bb?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=800&auto=format&fit=crop",
       description: "Batch fabrication for local contractors, industrial frame work and retail display steel."
     }
   ];
@@ -412,7 +389,7 @@ const ServicesSection = () => {
               whileHover={{ y: -10 }}
               className="group relative h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-xl shadow-slate-200"
             >
-              <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h4 className="text-2xl font-bold text-white mb-2">{service.title}</h4>
@@ -441,6 +418,7 @@ const VideoPreview = () => {
             alt="Process Video Thumbnail" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-brand-dark/40 flex items-center justify-center">
             <motion.button 
@@ -531,12 +509,12 @@ const FAQSection = () => {
 
 const GallerySection = () => {
   const images = [
-    { src: "https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?q=80&w=800&auto=format&fit=crop", height: "h-[300px]" },
-    { src: "https://images.unsplash.com/photo-1621259182978-fbf9312267b8?q=80&w=800&auto=format&fit=crop", height: "h-[450px]" },
-    { src: "https://images.unsplash.com/photo-1516937618919-df42ef2be3bb?q=80&w=800&auto=format&fit=crop", height: "h-[350px]" },
-    { src: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800&auto=format&fit=crop", height: "h-[400px]" },
-    { src: "https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=800&auto=format&fit=crop", height: "h-[350px]" },
-    { src: "https://images.unsplash.com/photo-1614705590304-41d3408805f3?q=80&w=800&auto=format&fit=crop", height: "h-[450px]" },
+    { src: "https://images.unsplash.com/photo-1505322101000-19457cff32ba?q=80&w=800&auto=format&fit=crop", height: "h-[300px]", alt: "Finished Metal Gate Fabrication" },
+    { src: "https://images.unsplash.com/photo-1581092160562-40aa084788c0?q=80&w=800&auto=format&fit=crop", height: "h-[450px]", alt: "Professional Metalworking Pliers and Tools" },
+    { src: "https://images.unsplash.com/photo-1516937618919-df42ef2be3bb?q=80&w=800&auto=format&fit=crop", height: "h-[350px]", alt: "Industrial Steel Framework" },
+    { src: "https://images.unsplash.com/photo-1614705590304-41d3408805f3?q=80&w=800&auto=format&fit=crop", height: "h-[400px]", alt: "Bespoke Driveway Gates" },
+    { src: "https://images.unsplash.com/photo-1504328345606-17b27c9b01c1?q=80&w=800&auto=format&fit=crop", height: "h-[350px]", alt: "Workshop Fabrication Process" },
+    { src: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800&auto=format&fit=crop", height: "h-[450px]", alt: "Decorative Railings Installation" },
   ];
 
   return (
@@ -556,7 +534,7 @@ const GallerySection = () => {
               whileHover={{ scale: 1.02 }}
               className={`${img.height} rounded-3xl overflow-hidden shadow-lg shadow-slate-200 hover:shadow-2xl transition-all duration-500`}
             >
-              <img src={img.src} alt={`Project ${idx}`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
             </motion.div>
           ))}
         </div>
@@ -571,85 +549,99 @@ const TestimonialsSection = () => {
       name: "Amanda H.",
       review: "Our gates look lovely but they also took on board our requirements for a little privacy while allowing our pet to see through the bottom. Fantastic craftsmanship.",
       rating: 5,
-      source: "yell"
+      source: "yell",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Julian Kirk",
       review: "Fantastic company producing quality fabrication. I have had two sets of large gates manufactured and fitted by Moat Fabrications and they are manufacturing a third set for me. I highly recommend them.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Jess Simpson",
       review: "Had our electric gates designed & fitted by these guys! Spot on from start to finish, always only a message away if needed! Would definitely recommend to friends and family!",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Shannon P.",
       review: "Very impressed with the work and designs this company have achieved, they are very polite and down to earth people. Very reliable, would definitely recommend.",
       rating: 5,
-      source: "yell"
+      source: "yell",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Mark Ruthven",
       review: "I've had a sliding gate supplied and fitted by Moat Fabrications and the finish is excellent. Shane is a very talented engineer and I wouldn't hesitate to recommend him.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Luke Conroy",
       review: "I was after some bespoke outdoor furniture and Shane was able to build exactly what I wanted. The welding is incredibly clean and the build quality is top tier.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Mick Riley",
       review: "The work carried out is second to none by experienced engineers who do their work with no fuss and get the job done to a very high standard. Best in the area in my opinion.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Kath Hedger",
       review: "Excellent job, really pleased with gates. The guys were spot on, punctual, tidy. Highly recommend.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Lee Ridgett",
       review: "Highly recommend Shane! Told him roughly what I had imagined for my new trailer sides and he done more than I had imagined! Perfect thanks Shane top job!",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Paige C.",
       review: "A* service. Highly recommend these guys! Super helpful in creating the gates that I wanted and answered all questions I had with the process.",
       rating: 5,
-      source: "yell"
+      source: "yell",
+      avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Pat Cain",
       review: "We weren't quite sure what we wanted. Bethany & Shane made some designs for us and we are really happy with the outcome. Professional and friendly.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Ami Featherstone",
       review: "Very efficient and responsive to messages. The gates were built and fitted within the timeframe promised and they look fantastic.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1567532939604-b6c5b0ad2e01?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Scarlett Georgia Vere",
       review: "Great company, would definitely recommend to anyone looking for high-quality metalwork. They were very helpful during the design phase.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=200&auto=format&fit=crop"
     },
     {
       name: "Jackie Punter",
       review: "Very good communication, work completed to high standard and on time. Would definitely use in the future.",
       rating: 5,
-      source: "facebook"
+      source: "facebook",
+      avatar: "https://images.unsplash.com/photo-1531123897727-8f129e16fdcc?q=80&w=200&auto=format&fit=crop"
     }
   ];
 
@@ -701,8 +693,14 @@ const TestimonialsSection = () => {
                   "{test.review}"
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center shadow-inner">
-                    <span className="font-bold text-brand-blue text-lg">{test.name.charAt(0)}</span>
+                  <div className="w-12 h-12 rounded-2xl overflow-hidden shadow-inner flex-shrink-0">
+                    <img 
+                      src={test.avatar} 
+                      alt={test.name} 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                      loading="lazy"
+                    />
                   </div>
                   <div>
                     <h5 className="font-bold text-slate-900 text-lg">{test.name}</h5>
@@ -725,7 +723,7 @@ const BlogSection = () => {
     {
       title: "How to prepare for a gate quote",
       category: "Guides",
-      image: "https://images.unsplash.com/photo-1614705590304-41d3408805f3?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1533038590840-1cde6b66b721?q=80&w=800&auto=format&fit=crop",
       date: "May 2026"
     },
     {
@@ -737,7 +735,7 @@ const BlogSection = () => {
     {
       title: "Why photos and measurements speed up quotes",
       category: "Efficiency",
-      image: "https://images.unsplash.com/photo-1516937618919-df42ef2be3bb?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?q=80&w=800&auto=format&fit=crop",
       date: "March 2026"
     }
   ];
@@ -758,7 +756,7 @@ const BlogSection = () => {
               className="group cursor-pointer"
             >
               <div className="aspect-[16/10] rounded-3xl overflow-hidden mb-6 shadow-xl shadow-slate-100 transition-all duration-500 group-hover:shadow-2xl">
-                <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" />
               </div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-brand-blue/5 text-brand-blue px-3 py-1 rounded-full">
